@@ -41,5 +41,17 @@ run "npx sequelize db:create"
 "npx sequelize seed:generate --name add-cities"
 "npx sequelize db:seed:all"
 
-ToDo:
+Git:
+=> git status
+=> git add .
+=> git commit -m "message"
+=> git push origin master
 
+
+
+
+
+
+
+TODO:
+Input validation wherever necessary
