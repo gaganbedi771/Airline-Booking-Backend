@@ -23,37 +23,7 @@ sequelize cli:
     => npx sequelize seed:generate --name file_name
     //to create seed file
     =>npx sequelize db:seed:all
-    //to modify fields
-    =>npx sequelize migration:create --name nameOfMigration
 
 
 
 How to run?
-clone to local
-open terminal with serviceFolder/src/index.js path
-npm install
-create .env file in serviceFolder and add
-//env file contents
-
-create src/config/config.js and add
-//config file contents
-
-run "npx sequelize db:create"
-"npx sequelize db:migrate"
-"npx sequelize seed:generate --name add-cities"
-"npx sequelize db:seed:all"
-
-Git:
-=> git status
-=> git add .
-=> git commit -m "message"
-=> git push origin master
-
-
-
-
-
-
-
-TODO:
-Input validation wherever necessary

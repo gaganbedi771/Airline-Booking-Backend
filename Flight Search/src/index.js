@@ -13,7 +13,7 @@ app.use("/api",ApiRoutes);
 
 app.listen(PORT,()=>{
     if(process.env.SYNC_DB=="true"){
-        db.sequelize.sync({force:true});
+        db.sequelize.sync({alter:true});
     }
 
 
