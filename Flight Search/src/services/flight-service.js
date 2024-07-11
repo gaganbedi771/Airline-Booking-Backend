@@ -21,7 +21,11 @@ exports.createFlight = async (data) => {
 
 exports.getFlight = async (id) => {
   try {
-    return await flightRepository.getFlight(id);
+    const flight=await flightRepository.getFlight(id);
+    if(!flight){
+      throw("No flight exists")
+    }
+    return flight
   } catch (error) {
     console.log("service layer error");
     throw error;
@@ -31,6 +35,17 @@ exports.getFlight = async (id) => {
 exports.getAllFlights = async (filter) => {
   try {
     return await flightRepository.getAllFlights(filter);
+  } catch (error) {
+    console.log("service layer error");
+    throw error;
+  }
+};
+
+
+exports.updateFlight = async (flightId,data) => {
+  try {
+    console.log(flightId,data)
+    return await flightRepository.updateFlight(flightId,data);
   } catch (error) {
     console.log("service layer error");
     throw error;

@@ -62,3 +62,22 @@ exports.getAll = async (req, res) => {
     );
   }
 };
+
+
+exports.update = async (req, res) => {
+  try {
+    const flights = await flightService.updateFlight(req.params.id,req.body);
+    return sendResponse(res, 201, flights, true, "Flight updated", {});
+  } catch (error) {
+    console.log(error);
+
+    return sendResponse(
+      res,
+      500,
+      {},
+      false,
+      "Not able to update the flight",
+      error
+    );
+  }
+};

@@ -13,6 +13,7 @@ router.delete("/city/:id",cityController.destroy);
 
 router.post("/flight", flightMiddleware.validateFlightData ,flightController.create);
 router.get("/flight/:id",flightController.get);
+router.patch("/flight/:id",flightController.update);
 router.get("/flight",flightController.getAll);
 
 module.exports=router;

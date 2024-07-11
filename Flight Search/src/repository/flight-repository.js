@@ -35,12 +35,24 @@ function createFilter(data) {
   const filterObject = {
     src_airport_id: data.src_airport_id,
     dest_airport_id: data.dest_airport_id,
-    price: { [Op.gte]: data.min_price||0 },
+    price: { [Op.gte]: data.min_price || 0 },
   };
 
   if (data.max_price) {
-    filterObject.price = { [Op.between]: [data.min_price||0, data.max_price] };
+    filterObject.price = {
+      [Op.between]: [data.min_price || 0, data.max_price],
+    };
   }
 
   return filterObject;
 }
+
+exports.updateFlight = async (flightId, data) => {
+  try {
+    await Flight.update(data, { where: { id: flightId } });
+    return true;
+  } catch (error) {
+    console.log("update booking error");
+    throw error;
+  }
+};
